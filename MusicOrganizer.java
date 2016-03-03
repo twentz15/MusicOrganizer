@@ -16,6 +16,7 @@ public class MusicOrganizer
     private MusicPlayer player;
     // A reader that can read music files and load them as tracks.
     private TrackReader reader;
+    private int randoPlay = 4;
 
     /**
      * Create a MusicOrganizer
@@ -72,6 +73,37 @@ public class MusicOrganizer
             Track track = tracks.get(index);
             player.startPlaying(track.getFilename());
             System.out.println("Now playing: " + track.getArtist() + " - " + track.getTitle());
+        }
+    }
+    /**
+     * This is used for random PLaylist to play every song once
+     * without repeats
+     */
+    public void randomPlayList()
+    {
+        Random r = new Random();
+        int index = r.nextInt(randoPlay);
+        System.out.println(index);
+        if(indexValid(index)) 
+        {
+            Track track = tracks.get(index);
+            player.startPlaying(track.getFilename());
+            System.out.println("Now playing: " + track.getArtist() + " - " + track.getTitle());
+            tracks.remove(index);
+            randoPlay--;
+        }
+        if(randoPlay == 0)
+        {
+            System.out.println("Thats all the music for the random PlayList, Entering Songs for \nanother round " + 
+            "or Random Music");
+            ArrayList<Track> tempTracks = reader.readTracks("audio", ".mp3");
+
+            // Put all thetracks into the organizer.
+            for(Track track : tempTracks) 
+            {
+                addTrack(track);
+            }
+            randoPlay = 4;
         }
     }
     /**
