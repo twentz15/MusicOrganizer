@@ -60,7 +60,9 @@ public class MusicOrganizer
             System.out.println("Now playing: " + track.getArtist() + " - " + track.getTitle());
         }
     }
-    
+    /**
+     * This is how you play a random song
+     */
     public void randomPlay()
     {
         Random r = new Random();

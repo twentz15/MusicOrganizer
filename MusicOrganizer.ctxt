@@ -24,6 +24,7 @@ comment3.target=void\ playTrack(int)
 comment3.text=\r\n\ Play\ a\ track\ in\ the\ collection.\r\n\ @param\ index\ The\ index\ of\ the\ track\ to\ be\ played.\r\n
 comment4.params=
 comment4.target=void\ randomPlay()
+comment4.text=\r\n\ This\ is\ how\ you\ play\ a\ random\ song\r\n
 comment5.params=
 comment5.target=int\ getNumberOfTracks()
 comment5.text=\r\n\ Return\ the\ number\ of\ tracks\ in\ the\ collection.\r\n\ @return\ The\ number\ of\ tracks\ in\ the\ collection.\r\n
